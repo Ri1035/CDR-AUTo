@@ -16,6 +16,14 @@
 | R8 | 2026-09-29 | 读取修复：字体/字号/位图颜色模式 | ✅ 通过 | 根因：Story 无 FontProperties（字体走 Text 层或 Story.Font）；位图模式属性是 Bitmap.Mode 而非 ColorMode | 字号=Story.Size 10/10；字体=Text.FontProperties.Name（混排逐字符）；位图 Mode=5 即 CMYK 基线；ConvertTo 确认可用（N7） | 见 git log |
 | R9 | 2026-09-29 | NOTES 注释层识别与跳过 | ✅ 通过（11→10，注释正确跳过） | 无 | walk() 增 skip_layers（NOTES 前缀图层跳过）；list_text_shapes 默认 skip_notes=True | 见 git log |
 | R10 | 2026-09-29 | 语义正式批次：--meta --values 模式（语义字段名→替换） | ✅ 通过（读图验收：6 套 12 张全替换正确） | 无 | fill 引擎新增 --meta/--values（field→placeholder 规范键映射）；\r 写入换行渲染正确（FARM/EGG 两行） | 见 git log |
+| R11 | 2026-09-29 | 融合批次：三套模板元素融合为一套吊牌（2 张） | ✅ 通过（读图验收） | ① 跨页复制不稳（ShapeRange 无 CopyToClipboard，Range.Copy+Paste 残缺）→ 改就地融合 ② PowerClip 内容坐标=未裁切原坐标，误删内部位图 → PC 内容强制保留 ③ 独立文字不随容器移动 → 分组平移 | 融合完成：模板1 卡型/圆孔/主标题 + 模板2 白背面/条形孔/洗涤图标 + 模板3 椭圆照片窗/自然文案 | 见 git log |
+
+## R11 详情：三模板融合批次（2026-09-29，用户检验件）
+
+- **融合配方**：正面 = 模板1 蓝色圆角卡 50×90（4mm 圆孔 + NATURE FARM 主标题）+ 模板3 椭圆照片 PowerClip（36×52 缩放置中，山林鸡蛋牧场照）；背面 = 模板2 白背面 55×95（条形孔 12×2.5 + WASHING INSTRUCTIONS 图标行）+ 模板3 卖点文案（田园土鸡蛋/五谷喂养/高山牧场/贮存方式）
+- **技术要点**：就地融合（弃跨页剪贴板路线）；PowerClip 内部对象强制保留（其坐标为未裁切原坐标）；分组平移（F1/F2 组 Move、F3 容器 SetSize、F4 文字单独定位）；残留清理（页面外对象/孤立孔）
+- **交付**：`outputs/fusion/` 融合吊牌_原样.cdr（6.7MB）/ _转曲.cdr（转曲 5 文字）/ .pdf / _preview.png
+- 过程波折（供研究）：PositionX/Y 参考点陷阱、跨页剪贴板残缺、PowerClip 内部坐标、TPL 路径替换静默失效（patch 未断言）——全部修复并记录
 
 ## R10 详情：语义正式批次（2026-09-29）
 
