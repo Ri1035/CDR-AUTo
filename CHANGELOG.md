@@ -2,6 +2,19 @@
 
 格式参考 Keep a Changelog；版本号 semver。所有变更记录于 TRAINING_LOG.md，重要节点同步于此。
 
+## [1.3.0] - 2026-09-29
+
+### Added
+- 模板登记器 `template_register.py`：模板入库自动分析（卡组聚类/文字字段/资产/孔策略）→ meta.json 草稿 + index.json 索引
+- 模板填充引擎 `hangtag_fill.py`：内容/规范化/#序号三模式匹配、中心恢复、越界自动缩放（R6/R7 验证 10/10）
+- 模板库架构：templates/<id>/template.cdr + meta.json；语义字段预填（product_name/series_en 等 10 字段）
+- R3：`SaveAs(path, StructSaveAsOptions{Version:1400})` 程序化保存 .cdr（X4）打通
+- R5：坐标陷阱修复（PositionX/Y 参考点不固定 → LeftX/BottomY/RightX/TopY）+ 视觉裁决法
+
+### Changed
+- **素材与代码分离**：templates/*.cdr 不入 git（历史已重建清除），分享包纯规范+代码
+- 本机版本认知修正：实装 CorelDRAW X4（build 14.0.0.701；目录名"2020"为历史命名）
+
 ## [1.1.0] - 2026-09-29
 
 ### Added

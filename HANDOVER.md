@@ -14,7 +14,8 @@
 1. **拷贝整个仓库文件夹**（含 `.git`，U盘/网盘均可）到新机任意路径，例如 `C:\Users\<你>\Desktop\CDR AUTo\`；
 2. **装环境**：64 位 Python 3.11+ → `pip install pywin32`（P1 后追加 `pip install fastmcp`）；
 3. **确认 CorelDRAW**：本机装有 CorelDRAW 2020（或 X4，见版本说明）且能正常打开；
-4. **验证**：运行
+4. **素材迁移**：`templates/*/template.cdr` 等素材 .cdr 不在 git 里——从旧电脑网盘/U盘单独拷贝到同路径；
+5. **验证**：运行
    `"C:\Users\Mayn\.workbuddy\binaries\python\versions\3.13.12\python.exe" "scripts\cdr_env_check.py"`
    输出 `"ok": true` 即接手完成；然后读 `PLAN.md` 末尾状态表继续训练。
 
@@ -41,7 +42,7 @@ CDR AUTo/
 │   ├── example_card.json      # 示例配置
 │   └── hangtag_result.json    # 最近一次运行结果（自动生成）
 ├── configs/             # 测试/训练用配置
-├── templates/           # （P1）吊牌模板库——统一 X4 格式
+├── templates/           # 模板库：index.json+meta.json 入 git；template.cdr 素材不入 git（换电脑单独拷贝）
 ├── groups/              # （P1）可复用群组元素库（水洗标/花纹）
 └── outputs/             # 生成产物（git 忽略）
 ```
