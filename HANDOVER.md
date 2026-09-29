@@ -42,6 +42,8 @@ CDR AUTo/
 │   ├── example_card.json      # 示例配置
 │   └── hangtag_result.json    # 最近一次运行结果（自动生成）
 ├── configs/             # 测试/训练用配置
+├── AGENTS.md            # AI 接入入口（根目录，AI 优先读取）
+├── docs/                # 项目文档：TODO/DESIGN/overview/architecture/user-guide/development/component-api
 ├── templates/           # 模板库：index.json+meta.json 入 git；template.cdr 素材不入 git（换电脑单独拷贝）
 ├── groups/              # （P1）可复用群组元素库（水洗标/花纹）
 └── outputs/             # 生成产物（git 忽略）
