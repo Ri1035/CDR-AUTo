@@ -1,0 +1,22 @@
+# 产物输出（每次训练生成，不入库）
+outputs/*
+!outputs/.gitkeep
+
+# Python
+__pycache__/
+*.pyc
+gen_py/
+
+# 临时文件
+*.tmp
+~$*
+
+# 网盘/同步工具噪音
+*.baiduyun.uploading.cfg
+*.baiduyun.*.cfg
+desktop.ini
+
+# 模板素材（大文件不入 git；meta.json/规范/代码入库，素材走网盘/U盘）
+templates/*/template.cdr
+templates/**/*.cdr
+!templates/**/placeholder.keep

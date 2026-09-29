@@ -1,0 +1,16 @@
+{
+  "status": "done",
+  "log": [
+    "模板已入库: C:\\Users\\Mayn\\Desktop\\CDR AUTo\\templates\\demo_mixed_v1\\template.cdr (14543686 字节)",
+    "已连接 CorelDRAW",
+    "分析完成：257 对象，页面 297x210mm",
+    "meta.json 草稿已生成: C:\\Users\\Mayn\\Desktop\\CDR AUTo\\templates\\demo_mixed_v1\\meta.json（10 个字段待语义命名）",
+    "index.json 已更新（共 1 个模板）"
+  ],
+  "warnings": [],
+  "outputs": {
+    "template": "C:\\Users\\Mayn\\Desktop\\CDR AUTo\\templates\\demo_mixed_v1\\template.cdr",
+    "meta": "C:\\Users\\Mayn\\Desktop\\CDR AUTo\\templates\\demo_mixed_v1\\meta.json",
+    "index": "C:\\Users\\Mayn\\Desktop\\CDR AUTo\\templates\\index.json"
+  }
+}

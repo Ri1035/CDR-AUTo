@@ -1,0 +1,23 @@
+{
+  "status": "done",
+  "outputs": {
+    "pdf": "C:/Users/Mayn/Desktop/CDR AUTo/outputs/r2_bounds\\越界测试.pdf",
+    "png": "C:/Users/Mayn/Desktop/CDR AUTo/outputs/r2_bounds\\越界测试_preview.png"
+  },
+  "warnings": [
+    "[越界] text '这条横向超长文本应该被检' 横向超出卡片 (左30.0 右88.7 卡宽50.0)，已跳过",
+    "[越界] line 横向超出卡片 (左10.0 右60.0 卡宽50.0)，已跳过",
+    "[越界] rect 横向超出卡片 (左40.0 右60.0 卡宽50.0)，已跳过",
+    "[越界] rect 横向超出卡片 (左40.0 右60.0 卡宽50.0)，已跳过",
+    "[越界] rect 纵向超出卡片 (顶80.0+高20.0 > 90.0)，已跳过",
+    "[越界] ellipse 横向超出卡片 (左37.0 右53.0 卡宽50.0)，已跳过",
+    "[越界] checkbox '丙' 尾端 60.8 超出卡宽 50.0，该项及之后已跳过"
+  ],
+  "log": [
+    "已连接 CorelDRAW (EnsureDispatch)",
+    "画布已建 50x90mm（layout=single）",
+    "front 面已渲染（7 个元素）",
+    "PDF 已导出: C:/Users/Mayn/Desktop/CDR AUTo/outputs/r2_bounds\\越界测试.pdf (7582 字节)",
+    "PNG 预览已导出: C:/Users/Mayn/Desktop/CDR AUTo/outputs/r2_bounds\\越界测试_preview.png"
+  ]
+}

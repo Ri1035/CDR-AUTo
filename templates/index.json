@@ -1,0 +1,12 @@
+{
+  "templates": [
+    {
+      "id": "demo_mixed_v1",
+      "dir": "demo_mixed_v1",
+      "sets": 3,
+      "fields": 10,
+      "format": "X4",
+      "status": "draft"
+    }
+  ]
+}

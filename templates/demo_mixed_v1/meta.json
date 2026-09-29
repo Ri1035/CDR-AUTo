@@ -1,0 +1,395 @@
+{
+  "template_id": "demo_mixed_v1",
+  "source_file": "测试文件.cdr",
+  "format": "X4(v14)——由 X4 实机保存，兼容 2020",
+  "page": {
+    "width": 297.0,
+    "height": 210.0
+  },
+  "sets": [
+    {
+      "set_id": "set_50x90_1",
+      "card_size": [
+        50,
+        90
+      ],
+      "card_count": 2,
+      "bbox": [
+        135.05,
+        106.57,
+        238.05,
+        196.57
+      ],
+      "location": "on_page",
+      "cards": [
+        {
+          "bbox": [
+            135.05,
+            106.57,
+            185.05,
+            196.57
+          ],
+          "role": "TODO(正/背)"
+        },
+        {
+          "bbox": [
+            188.05,
+            106.57,
+            238.05,
+            196.57
+          ],
+          "role": "TODO(正/背)"
+        }
+      ]
+    },
+    {
+      "set_id": "set_55x95_1",
+      "card_size": [
+        55,
+        95
+      ],
+      "card_count": 4,
+      "bbox": [
+        44.2,
+        -11.12,
+        291.19,
+        83.88
+      ],
+      "location": "off_page",
+      "cards": [
+        {
+          "bbox": [
+            44.2,
+            -11.12,
+            99.2,
+            83.88
+          ],
+          "role": "TODO(正/背)"
+        },
+        {
+          "bbox": [
+            102.2,
+            -11.12,
+            157.2,
+            83.88
+          ],
+          "role": "TODO(正/背)"
+        },
+        {
+          "bbox": [
+            178.19,
+            -11.12,
+            233.19,
+            83.88
+          ],
+          "role": "TODO(正/背)"
+        },
+        {
+          "bbox": [
+            236.19,
+            -11.12,
+            291.19,
+            83.88
+          ],
+          "role": "TODO(正/背)"
+        }
+      ]
+    },
+    {
+      "set_id": "set_35x80_1",
+      "card_size": [
+        35,
+        80
+      ],
+      "card_count": 2,
+      "bbox": [
+        178.61,
+        -108.55,
+        251.61,
+        -28.55
+      ],
+      "location": "off_page",
+      "cards": [
+        {
+          "bbox": [
+            178.61,
+            -108.55,
+            213.61,
+            -28.55
+          ],
+          "role": "TODO(正/背)"
+        },
+        {
+          "bbox": [
+            216.61,
+            -108.55,
+            251.61,
+            -28.55
+          ],
+          "role": "TODO(正/背)"
+        }
+      ]
+    }
+  ],
+  "fields": [
+    {
+      "shape_idx": 1,
+      "placeholder": "山林散养蛋",
+      "field": "product_name",
+      "bbox": [
+        53.83,
+        -59.97,
+        90.56,
+        -53.44
+      ],
+      "font": "TODO(登记时核对)",
+      "max_chars": 8,
+      "note": "椭圆卡正面主标题",
+      "field_cn": "产品名",
+      "status": "named(预填，待用户核对)"
+    },
+    {
+      "shape_idx": 2,
+      "placeholder": "贮存方式：阴凉干燥",
+      "field": "storage_note",
+      "bbox": [
+        186.67,
+        -98.95,
+        205.56,
+        -97.0
+      ],
+      "font": "TODO(登记时核对)",
+      "max_chars": 14,
+      "note": "背面底部",
+      "field_cn": "储存说明",
+      "status": "named(预填，待用户核对)"
+    },
+    {
+      "shape_idx": 3,
+      "placeholder": "自然喂养",
+      "field": "feature_1",
+      "bbox": [
+        187.47,
+        -61.06,
+        204.76,
+        -57.02
+      ],
+      "font": "TODO(登记时核对)",
+      "max_chars": 4,
+      "note": "胶囊卡",
+      "field_cn": "卖点1",
+      "status": "named(预填，待用户核对)"
+    },
+    {
+      "shape_idx": 4,
+      "placeholder": "山间散养",
+      "field": "feature_2",
+      "bbox": [
+        184.57,
+        -56.36,
+        207.65,
+        -50.92
+      ],
+      "font": "TODO(登记时核对)",
+      "max_chars": 4,
+      "note": "胶囊卡",
+      "field_cn": "卖点2",
+      "status": "named(预填，待用户核对)"
+    },
+    {
+      "shape_idx": 86,
+      "placeholder": "Beauty with elegance.",
+      "field": "tagline_en_2",
+      "bbox": [
+        192.7,
+        29.86,
+        216.52,
+        32.04
+      ],
+      "font": "TODO(登记时核对)",
+      "max_chars": 24,
+      "note": "粉裙卡背面",
+      "field_cn": "英文标语(副)",
+      "status": "named(预填，待用户核对)"
+    },
+    {
+      "shape_idx": 87,
+      "placeholder": "Fashion",
+      "field": "series_en_1",
+      "bbox": [
+        190.01,
+        32.63,
+        219.13,
+        38.08
+      ],
+      "font": "TODO(登记时核对)",
+      "max_chars": 8,
+      "note": "粉裙卡正面大字",
+      "field_cn": "系列名英文",
+      "status": "named(预填，待用户核对)"
+    },
+    {
+      "shape_idx": 88,
+      "placeholder": "Beauty with elegance.",
+      "field": "tagline_en_1",
+      "bbox": [
+        48.92,
+        35.08,
+        66.04,
+        36.65
+      ],
+      "font": "TODO(登记时核对)",
+      "max_chars": 24,
+      "note": "背带裤卡背面",
+      "field_cn": "英文标语(副)",
+      "status": "named(预填，待用户核对)"
+    },
+    {
+      "shape_idx": 89,
+      "placeholder": "Fashion",
+      "field": "series_en_2",
+      "bbox": [
+        46.99,
+        37.07,
+        67.92,
+        40.99
+      ],
+      "font": "TODO(登记时核对)",
+      "max_chars": 8,
+      "note": "背带裤卡正面大字",
+      "field_cn": "系列名英文",
+      "status": "named(预填，待用户核对)"
+    },
+    {
+      "shape_idx": 212,
+      "placeholder": "HAPPY\rBABY",
+      "field": "brand_title_f",
+      "bbox": [
+        26.03,
+        148.8,
+        48.35,
+        157.29
+      ],
+      "font": "TODO(登记时核对)",
+      "max_chars": 12,
+      "note": "蓝卡正面，含换行",
+      "field_cn": "正面主标题",
+      "status": "named(预填，待用户核对)"
+    },
+    {
+      "shape_idx": 252,
+      "placeholder": "HAPPY\rBABY",
+      "field": "brand_title_b",
+      "bbox": [
+        147.62,
+        116.63,
+        172.47,
+        126.09
+      ],
+      "font": "TODO(登记时核对)",
+      "max_chars": 12,
+      "note": "蓝卡背面，含换行",
+      "field_cn": "背面主标题",
+      "status": "named(预填，待用户核对)"
+    }
+  ],
+  "assets": {
+    "bitmaps": [
+      {
+        "bbox": [
+          112.89,
+          -123.4,
+          221.18,
+          -12.39
+        ],
+        "w": 108.3,
+        "h": 111.02,
+        "color_mode": "TODO(核对 CMYK/灰度)",
+        "is_powerclip": false
+      },
+      {
+        "bbox": [
+          40.33,
+          -122.79,
+          143.83,
+          -11.33
+        ],
+        "w": 103.5,
+        "h": 111.46,
+        "color_mode": "TODO(核对 CMYK/灰度)",
+        "is_powerclip": false
+      },
+      {
+        "bbox": [
+          56.1,
+          127.41,
+          129.94,
+          206.99
+        ],
+        "w": 73.84,
+        "h": 79.58,
+        "color_mode": "TODO(核对 CMYK/灰度)",
+        "is_powerclip": false
+      },
+      {
+        "bbox": [
+          2.44,
+          127.41,
+          76.29,
+          206.99
+        ],
+        "w": 73.84,
+        "h": 79.58,
+        "color_mode": "TODO(核对 CMYK/灰度)",
+        "is_powerclip": false
+      }
+    ],
+    "powerclips": [
+      {
+        "bbox": [
+          178.61,
+          -108.55,
+          213.61,
+          -28.55
+        ],
+        "type": 1
+      },
+      {
+        "bbox": [
+          47.19,
+          -108.18,
+          97.19,
+          -28.18
+        ],
+        "type": 2
+      },
+      {
+        "bbox": [
+          67.69,
+          137.72,
+          122.69,
+          197.72
+        ],
+        "type": 3
+      },
+      {
+        "bbox": [
+          9.69,
+          137.72,
+          64.69,
+          197.72
+        ],
+        "type": 3
+      }
+    ],
+    "loose_curves": 217,
+    "ungrouped_note": "模板含大量未群组对象时，填充按文字对象定位（不依赖群组）"
+  },
+  "holes": {
+    "strategy": "沿用模板已有孔对象",
+    "circle_4mm": 7,
+    "bar_12x2.5": 4
+  },
+  "status": "ready(字段已预填，待用户核对)",
+  "registered_at": "2026-09-29T18:17:51"
+}

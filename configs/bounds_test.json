@@ -1,0 +1,19 @@
+{
+  "name": "越界测试",
+  "layout": "single",
+  "card": { "width": 50, "height": 90 },
+  "colors": { "background": [0,0,0,0], "primary": [0,0,0,100], "text": [0,0,0,85] },
+  "hole": { "enabled": false },
+  "front": [
+    { "type": "text", "text": "这条横向超长文本应该被检测并移除因为超宽", "x": 30, "y_from_top": 10, "size": 8 },
+    { "type": "line", "x1": 10, "x2": 60, "y_from_top": 20, "width_mm": 0.25 },
+    { "type": "rect", "x": 40, "y_from_top": 25, "w": 20, "h": 5, "fill": [0,0,0,100] },
+    { "type": "rect", "x": 5, "y_from_top": 80, "w": 10, "h": 20, "fill": [0,0,0,100] },
+    { "type": "ellipse", "cx": 45, "cy_from_top": 50, "r": 8, "outline": [0,0,0,100] },
+    { "type": "text", "text": "正常元素应在", "x": 5, "y_from_top": 65, "size": 6 },
+    { "type": "checkbox_row", "items": ["甲", "乙", "丙", "丁"], "x": 5, "y_from_top": 75, "gap": 18 }
+  ],
+  "back": [
+    { "type": "text", "text": "背面无越界", "align": "center", "y_from_top": 45, "size": 8 }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "name": "示例吊牌",
+  "layout": "2up",
+  "card": { "width": 50, "height": 90 },
+  "colors": {
+    "background": [0, 0, 0, 0],
+    "primary": [85, 60, 15, 5],
+    "text": [0, 0, 0, 85],
+    "hole": [0, 0, 0, 28]
+  },
+  "hole": { "enabled": true, "cx": 25, "cy_from_top": 7, "d": 4 },
+  "front": [
+    { "type": "text", "text": "LANSHAN GROUP", "align": "center", "y_from_top": 18, "size": 8, "bold": true, "font": "en" },
+    { "type": "line", "x1": 10, "x2": 40, "y_from_top": 22, "width_mm": 0.25 },
+    { "type": "text", "text": "纯棉圆领 T 恤", "align": "center", "y_from_top": 30, "size": 9, "bold": true },
+    { "type": "text", "text": "货号：LS-2026-088", "align": "center", "y_from_top": 38, "size": 6 },
+    { "type": "text", "text": "颜色：白 / 尺码：M", "align": "center", "y_from_top": 45, "size": 6 },
+    { "type": "underline_field", "label": "零售价：", "x": 8, "line_to": 42, "y_from_top": 58, "label_size": 7 },
+    { "type": "rect", "x": 6, "y_from_top": 78, "w": 38, "h": 0.4, "fill": [85, 60, 15, 5] },
+    { "type": "checkbox_row", "items": ["检验员 08", "合格证"], "x": 6, "y_from_top": 85, "gap": 12 }
+  ],
+  "back": [
+    { "type": "text", "text": "洗涤说明", "align": "center", "y_from_top": 16, "size": 9, "bold": true },
+    { "type": "line", "x1": 14, "x2": 36, "y_from_top": 20, "width_mm": 0.2 },
+    { "type": "text", "text": "· 40°C 以下水温洗涤", "x": 8, "y_from_top": 28, "size": 6 },
+    { "type": "text", "text": "· 不可氯漂", "x": 8, "y_from_top": 34, "size": 6 },
+    { "type": "text", "text": "· 悬挂晾干，低温熨烫", "x": 8, "y_from_top": 40, "size": 6 },
+    { "type": "text", "text": "· 深浅色分开洗涤", "x": 8, "y_from_top": 46, "size": 6 },
+    { "type": "text", "text": "材质：100% 棉", "align": "center", "y_from_top": 60, "size": 6.5 },
+    { "type": "text", "text": "产地：中国", "align": "center", "y_from_top": 67, "size": 6.5 },
+    { "type": "text", "text": "客服微信 LANSHAN-CS", "align": "center", "y_from_top": 80, "size": 5.5, "color": [85, 60, 15, 5] }
+  ]
+}
