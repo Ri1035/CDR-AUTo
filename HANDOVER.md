@@ -62,6 +62,12 @@ CDR AUTo/
 - 64 位 Python 3.11+（WorkBuddy 受管 Python 即可）；pywin32（P1 后加 fastmcp）
 - 字体：模板所用字体在生成机上必须存在（用 `FontList` 核对）
 
+## 6b. 双目录同步（防分叉）
+
+- **源（git）**：`C://Users//Mayn//Desktop//CDR AUTo\`——一切改动在此进行
+- **分发副本**：`C://Users//Mayn//.workbuddy//skills//coreldraw-hangtag//`（WorkBuddy skill 触发机制用）
+- 同步：改完 CDR AUTo 后运行 `scripts\sync_to_workbuddy_skill.cmd`
+
 ## 7. 关键技术结论索引（避免重新踩坑）
 
 - 字号必须 `Text.Story.Size`；`FontProperties.Size` 静默无效 → 全表见 `references/api_gotchas.md`
