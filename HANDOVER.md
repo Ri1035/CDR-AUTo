@@ -78,6 +78,19 @@ CDR AUTo/
 - CorelDRAW 进程必须关沙箱访问；`app.Quit()` 禁止调用
 - Weld 等接口类型参数用 `_oleobj_.Invoke` 绕过
 
+## 7b. GitHub 推送网络技巧（代理失效时）
+
+本机常有本地代理环境变量（`http_proxy=127.0.0.1:端口`），代理不转发 GitHub 时推送报
+`schannel CRYPT_E_NO_REVOCATION_CHECK` 或 `CONNECT tunnel failed 502`。
+**解法**（绕过失效代理直连）：
+
+```bash
+env -u http_proxy -u https_proxy -u HTTP_PROXY -u HTTPS_PROXY -u ALL_PROXY \
+    git -c http.sslBackend=openssl push
+```
+
+（openssl 后端不读 Windows 系统代理；env -u 清环境变量代理。两者组合才有效。）
+
 ## 8. 术语与形态（详见 PLAN.md 第二节）
 
 CLI 工具（引擎，已有）→ Skill（AI 手册+脚本，已有）→ **MCP 插件/连接器**（P2 目标形态）。对外统称：**CDR 吊牌自动化插件**。
