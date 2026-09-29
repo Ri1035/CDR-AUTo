@@ -1,95 +1,95 @@
 {
   "status": "done",
   "outputs": {
-    "editable_cdr": "C:/Users/Mayn/Desktop/CDR AUTo/outputs/r7_demo\\R7演练_原样.cdr",
-    "curves_cdr": "C:/Users/Mayn/Desktop/CDR AUTo/outputs/r7_demo\\R7演练_转曲.cdr",
-    "pdf": "C:/Users/Mayn/Desktop/CDR AUTo/outputs/r7_demo\\R7演练.pdf",
-    "png": "C:/Users/Mayn/Desktop/CDR AUTo/outputs/r7_demo\\R7演练_preview.png"
+    "editable_cdr": "C:/Users/Mayn/Desktop/CDR AUTo/outputs/r10_semantic\\R10语义批次_原样.cdr",
+    "curves_cdr": "C:/Users/Mayn/Desktop/CDR AUTo/outputs/r10_semantic\\R10语义批次_转曲.cdr",
+    "pdf": "C:/Users/Mayn/Desktop/CDR AUTo/outputs/r10_semantic\\R10语义批次.pdf",
+    "png": "C:/Users/Mayn/Desktop/CDR AUTo/outputs/r10_semantic\\R10语义批次_preview.png"
   },
   "replaced": [
     {
       "idx": 1,
       "from": "山林散养蛋",
-      "to": "林间走地蛋",
+      "to": "田园土鸡蛋",
       "via": "内容匹配"
     },
     {
       "idx": 2,
       "from": "贮存方式：阴凉干燥",
-      "to": "贮存方式：请置阴凉处",
+      "to": "贮存方式：置阴凉避光",
       "via": "内容匹配"
     },
     {
       "idx": 3,
       "from": "自然喂养",
-      "to": "五谷喂养",
+      "to": "谷物散养",
       "via": "内容匹配"
     },
     {
       "idx": 4,
       "from": "山间散养",
-      "to": "高山牧场",
+      "to": "天然牧场",
       "via": "内容匹配"
     },
     {
       "idx": 5,
       "from": "Beauty with elegance.",
-      "to": "Made with love.",
-      "via": "内容匹配"
+      "to": "Crafted with care.",
+      "via": "规范化匹配"
     },
     {
       "idx": 6,
       "from": "Fashion",
-      "to": "SPRING 2026",
+      "to": "NATURE",
       "via": "内容匹配"
     },
     {
       "idx": 7,
       "from": "Beauty with elegance.",
-      "to": "Made with love.",
-      "via": "内容匹配"
+      "to": "Crafted with care.",
+      "via": "规范化匹配"
     },
     {
       "idx": 8,
       "from": "Fashion",
-      "to": "SPRING 2026",
+      "to": "NATURE",
       "via": "内容匹配"
     },
     {
       "idx": 9,
       "from": "HAPPY\rBABY",
-      "to": "SUNNY DAY",
+      "to": "FARM\rEGG",
       "via": "规范化匹配"
     },
     {
       "idx": 10,
       "from": "HAPPY\rBABY",
-      "to": "SUNNY DAY",
+      "to": "FARM\rEGG",
       "via": "规范化匹配"
     }
   ],
   "warnings": [
-    "[越界] #6 'Fashion'→'SPRING 202' 缩放后仍超容器，字号已压至下限",
-    "[越界] #8 'Fashion'→'SPRING 202' 缩放后仍超容器，字号已压至下限"
+    "[越界] #8 'Fashion'→'NATURE' 缩放后仍超容器，字号已压至下限"
   ],
   "log": [
+    "语义字段模式：7 个字段值已装载",
     "已连接 CorelDRAW",
-    "模板已复制 → C:/Users/Mayn/Desktop/CDR AUTo/outputs/r7_demo\\R7演练_原样.cdr",
+    "模板已复制 → C:/Users/Mayn/Desktop/CDR AUTo/outputs/r10_semantic\\R10语义批次_原样.cdr",
     "文字对象共 10 个",
     "候选容器 17 个",
-    "  替换#1 (内容匹配): '山林散养蛋' → '林间走地蛋'",
-    "  替换#2 (内容匹配): '贮存方式：阴凉干燥' → '贮存方式：请置阴凉处'",
-    "  替换#3 (内容匹配): '自然喂养' → '五谷喂养'",
-    "  替换#4 (内容匹配): '山间散养' → '高山牧场'",
-    "  替换#5 (内容匹配): 'Beauty with elegance' → 'Made with love.'",
-    "  替换#6 (内容匹配): 'Fashion' → 'SPRING 2026'",
-    "  替换#7 (内容匹配): 'Beauty with elegance' → 'Made with love.'",
-    "  替换#8 (内容匹配): 'Fashion' → 'SPRING 2026'",
-    "  替换#9 (规范化匹配): 'HAPPY\\rBABY' → 'SUNNY DAY'",
-    "  替换#10 (规范化匹配): 'HAPPY\\rBABY' → 'SUNNY DAY'",
-    "原样 .cdr 已保存: C:/Users/Mayn/Desktop/CDR AUTo/outputs/r7_demo\\R7演练_原样.cdr (14552122 字节)",
-    "转曲 .cdr 已保存（转曲 10 个文字对象）: C:/Users/Mayn/Desktop/CDR AUTo/outputs/r7_demo\\R7演练_转曲.cdr",
-    "PDF 已导出: C:/Users/Mayn/Desktop/CDR AUTo/outputs/r7_demo\\R7演练.pdf (2209852 字节)",
-    "PNG 预览已导出: C:/Users/Mayn/Desktop/CDR AUTo/outputs/r7_demo\\R7演练_preview.png"
+    "  替换#1 (内容匹配): '山林散养蛋' → '田园土鸡蛋'",
+    "  替换#2 (内容匹配): '贮存方式：阴凉干燥' → '贮存方式：置阴凉避光'",
+    "  替换#3 (内容匹配): '自然喂养' → '谷物散养'",
+    "  替换#4 (内容匹配): '山间散养' → '天然牧场'",
+    "  替换#5 (规范化匹配): 'Beauty with elegance' → 'Crafted with care.'",
+    "  替换#6 (内容匹配): 'Fashion' → 'NATURE'",
+    "  替换#7 (规范化匹配): 'Beauty with elegance' → 'Crafted with care.'",
+    "  替换#8 (内容匹配): 'Fashion' → 'NATURE'",
+    "  替换#9 (规范化匹配): 'HAPPY\\rBABY' → 'FARM\\rEGG'",
+    "  替换#10 (规范化匹配): 'HAPPY\\rBABY' → 'FARM\\rEGG'",
+    "原样 .cdr 已保存: C:/Users/Mayn/Desktop/CDR AUTo/outputs/r10_semantic\\R10语义批次_原样.cdr (14551730 字节)",
+    "转曲 .cdr 已保存（转曲 10 个文字对象）: C:/Users/Mayn/Desktop/CDR AUTo/outputs/r10_semantic\\R10语义批次_转曲.cdr",
+    "PDF 已导出: C:/Users/Mayn/Desktop/CDR AUTo/outputs/r10_semantic\\R10语义批次.pdf (2214221 字节)",
+    "PNG 预览已导出: C:/Users/Mayn/Desktop/CDR AUTo/outputs/r10_semantic\\R10语义批次_preview.png"
   ]
 }

@@ -166,7 +166,9 @@ def fit_and_center(shape, app, container, old_cx, warnings, what):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--template", required=True)
-    ap.add_argument("--mapping", required=True)
+    ap.add_argument("--mapping", help="映射 JSON（原文/#序号 → 新文字）")
+    ap.add_argument("--meta", help="模板 meta.json（语义字段模式）")
+    ap.add_argument("--values", help="字段值 JSON：{field: new_text}（配合 --meta）")
     ap.add_argument("--out", required=True)
     ap.add_argument("--name", required=True)
     ap.add_argument("--list-only", action="store_true", help="仅列出文字清单不修改")
@@ -174,11 +176,33 @@ def main():
 
     if not os.path.isfile(args.template):
         die(2, "模板不存在: %s" % args.template)
-    try:
-        with open(args.mapping, "r", encoding="utf-8") as f:
-            mapping = json.load(f)
-    except Exception as e:
-        die(2, "映射读取失败: %s" % e)
+    mapping = {}
+    if args.mapping:
+        try:
+            with open(args.mapping, "r", encoding="utf-8") as f:
+                mapping = json.load(f)
+        except Exception as e:
+            die(2, "映射读取失败: %s" % e)
+    if args.meta:
+        if not args.values:
+            die(2, "--meta 模式需要同时提供 --values")
+        try:
+            with open(args.meta, "r", encoding="utf-8") as f:
+                meta = json.load(f)
+            with open(args.values, "r", encoding="utf-8") as f:
+                values = json.load(f)
+        except Exception as e:
+            die(2, "meta/values 读取失败: %s" % e)
+        # 语义字段 → 规范化键映射（placeholder 的 norm 键 = 替换目标）
+        for f in meta.get("fields", []):
+            fname = f.get("field", "")
+            if fname in values:
+                nk = norm_key(f.get("placeholder", ""))
+                if nk:
+                    mapping[nk] = values[fname]
+        log("语义字段模式：%d 个字段值已装载" % sum(1 for k in mapping))
+    if not mapping:
+        die(2, "未提供映射（--mapping 或 --meta+--values）")
     os.makedirs(args.out, exist_ok=True)
 
     app = connect()

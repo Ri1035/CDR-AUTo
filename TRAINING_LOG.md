@@ -15,6 +15,14 @@
 | R7 | 2026-09-29 | 引擎完善：规范化模糊匹配 + 中心恢复 + 越界自动缩放 | ✅ 通过（10/10 命中，读图核对缩放生效） | 无新缺陷 | hangtag_fill.py 新增 norm_key/containers_of/container_for/fit_and_center | 见 git log |
 | R8 | 2026-09-29 | 读取修复：字体/字号/位图颜色模式 | ✅ 通过 | 根因：Story 无 FontProperties（字体走 Text 层或 Story.Font）；位图模式属性是 Bitmap.Mode 而非 ColorMode | 字号=Story.Size 10/10；字体=Text.FontProperties.Name（混排逐字符）；位图 Mode=5 即 CMYK 基线；ConvertTo 确认可用（N7） | 见 git log |
 | R9 | 2026-09-29 | NOTES 注释层识别与跳过 | ✅ 通过（11→10，注释正确跳过） | 无 | walk() 增 skip_layers（NOTES 前缀图层跳过）；list_text_shapes 默认 skip_notes=True | 见 git log |
+| R10 | 2026-09-29 | 语义正式批次：--meta --values 模式（语义字段名→替换） | ✅ 通过（读图验收：6 套 12 张全替换正确） | 无 | fill 引擎新增 --meta/--values（field→placeholder 规范键映射）；\r 写入换行渲染正确（FARM/EGG 两行） | 见 git log |
+
+## R10 详情：语义正式批次（2026-09-29）
+
+- 引擎新增 `--meta meta.json --values values.json` 模式：按 meta fields 的语义字段名（product_name/brand_title_f/...）装载替换值——**MCP 化后 fill_template(template_id, values) 的核心逻辑就位**
+- 演示值 10 字段全部命中：产品名→田园土鸡蛋（椭圆卡）、卖点→谷物散养/天然牧场（胶囊卡）、贮存说明更新、系列名→NATURE、标语→Crafted with care.、主标题→FARM/EGG（**\r 写入=正确两行渲染**，读取陷阱的反向验证）
+- 读图验收：6 套 12 张无溢出、无错位、孔位完整、PowerClip 照片保留
+- 产物：`outputs/r10_semantic/`（原样 14.55MB / 转曲 / PDF 2.2MB / 预览）
 
 ## R8/R9 详情（2026-09-29）
 
