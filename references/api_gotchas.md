@@ -103,3 +103,9 @@ main = win32com.client.Dispatch(res)   # 包回 Shape 继续 fill/outline
 - 位图转换（N7 图片 CMYK 化）：`Bitmap.ConvertTo(mode)` / `ConvertToBW` / `ConvertToPaletted` 存在
 - 位图其他有用属性：`ResolutionX/Y`（dpi）、`IsEPS`、`ExternallyLinked`、`Embedded`
 - 图层跳过：`doc.Layers` / `page.Layers` 按图层名过滤（NOTES 注释层），遍历时跳过该层 Shapes
+
+## 13. COM 文件参数必须绝对路径（R12 回归实测）
+
+- `PublishToPDF` / `SaveAs` / `OpenDocument` 等的路径参数若为**相对路径**，会按 **CorelDRAW 进程的 cwd**（非 Python cwd）解析——轻则写到别处，重则 `com_error E_FAIL 无描述`。
+- ✅ 修复：所有脚本入口对路径参数 `os.path.abspath()` 后再使用。
+- 排错经验：同代码"之前成功后来失败"时，先核对**运行目录**是否变了。

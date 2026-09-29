@@ -313,8 +313,9 @@ def main():
     ap.add_argument("--out", required=True, help="输出目录")
     args = ap.parse_args()
 
+    cfg_path = os.path.abspath(args.config)
     try:
-        with open(args.config, "r", encoding="utf-8") as f:
+        with open(cfg_path, "r", encoding="utf-8") as f:
             cfg = json.load(f)
     except Exception as e:
         die(EXIT_CONFIG, "配置读取失败: %s" % e)
@@ -322,7 +323,7 @@ def main():
     if err:
         die(EXIT_CONFIG, "配置校验失败: %s" % err)
 
-    out_dir = args.out
+    out_dir = os.path.abspath(args.out)   # COM 相对路径陷阱防御（PublishToPDF 按进程 cwd 解析）
     os.makedirs(out_dir, exist_ok=True)
     name = cfg["name"]
     card_w = float(cfg["card"]["width"])

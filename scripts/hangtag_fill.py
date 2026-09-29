@@ -174,6 +174,8 @@ def main():
     ap.add_argument("--list-only", action="store_true", help="仅列出文字清单不修改")
     args = ap.parse_args()
 
+    args.template = os.path.abspath(args.template)
+    args.out = os.path.abspath(args.out)   # COM 文件参数必须绝对路径
     if not os.path.isfile(args.template):
         die(2, "模板不存在: %s" % args.template)
     mapping = {}

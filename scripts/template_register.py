@@ -180,6 +180,8 @@ def main():
     ap.add_argument("--lib", default=None, help="模板库根目录（默认 <仓库>/templates）")
     args = ap.parse_args()
 
+    args.template = os.path.abspath(args.template)
+    args.lib = os.path.abspath(args.lib)   # COM 文件参数必须绝对路径
     if not os.path.isfile(args.template):
         die(2, "模板不存在: %s" % args.template)
     repo = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))

@@ -2,6 +2,23 @@
 
 格式参考 Keep a Changelog；版本号 semver。所有变更记录于 TRAINING_LOG.md，重要节点同步于此。
 
+## [1.4.0] - 2026-09-29
+
+### Added
+- **R8 读取修复**：字号=Story.Size（10/10）；字体名=Text.FontProperties.Name / Story.Font；位图模式=Bitmap.Mode（CMYK 基线=5）；Bitmap.ConvertTo 确认（图片 CMYK 化可直用）
+- **R9 NOTES 注释层**：walk 增 skip_layers，枚举/替换/导出跳过 NOTES 图层
+- **R10 语义正式批次**：fill 引擎 `--meta --values` 模式（语义字段名→替换），6 套 12 张读图验收通过
+- **R11 融合批次**：三模板元素融合一套吊牌（2 张）读图验收通过（用户检验件）；就地融合路线（弃跨页剪贴板）
+- 文档全集：AGENTS.md 入口 + docs/{TODO,DESIGN,overview,architecture,user-guide,development,component-api}
+- GitHub 推送：Ri1035/CDR-AUTo（private）
+
+### Fixed
+- **R12 回归修复**：PublishToPDF/COM 文件参数**相对路径陷阱**（按 CorelDRAW 进程 cwd 解析）→ 全引擎入口 abspath 防御；相对路径回归测试自愈验证
+- R4 遗留读取根因：Story 无 FontProperties（字体在 Text 层）
+
+### 训练记录
+- R1-R11 全过程见 TRAINING_LOG.md；总体完成度 70%，下一步 P2 MCP 化
+
 ## [1.3.0] - 2026-09-29
 
 ### Added
