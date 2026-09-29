@@ -9,7 +9,7 @@
 - ✅ **GitHub 已推送**：`Ri1035/CDR-AUTo`（private，master 分支，含全套文档 docs/）
 
 - P0 基础 ✅ ｜ **训练 R1-R7 ✅** ｜ R8-R11（训练收尾）⬜ ｜ P2 MCP 化 ⬜ ｜ P3 批量 ⬜ ｜ P4 分发 ⬜
-- 完成度：**总体约 40%**（引擎核心链路已完备并经真实模板验证）
+- 完成度：**总体约 55%**（引擎完备 + 读取修复 + 注释层；剩 R10 语义批次 / R11 缺孔确认 → P2）
 
 ## 🔬 进行中
 
@@ -19,8 +19,8 @@
 
 | # | 任务 | 优先级 | 说明 |
 |---|---|---|---|
-| R8 | 读取修复：文字字体/字号 | 高 | `FontProperties` 在真实模板文字上异常 → 换 `Story.FontProperties` / `Text.Font` 逐对象探测；位图颜色模式换 `Bitmap` 属性重探 |
-| R9 | NOTES 注释层识别与跳过 | 高 | 在现有模板加 NOTES 图层模拟验证：枚举/替换/导出时跳过该图层 |
+| ✅ R8 | 读取修复：文字字体/字号+位图模式 | 高 | 已完成：字号 Story.Size 10/10；字体 Text.FontProperties.Name；位图 Bitmap.Mode（CMYK 基线=5）；gotchas #12 |
+| ✅ R9 | NOTES 注释层识别与跳过 | 高 | 已完成：walk 增 skip_layers；实测 11→10 注释正确跳过 |
 | R10 | 语义正式批次 | 高 | 按 meta.json 已预填的 10 字段语义名（product_name/brand_title_f 等）出真实批次：双 .cdr + PDF/PNG + 读图验收 |
 | R11 | 缺孔卡确认 | 低 | 8 张卡实测 7 个 4mm 圆孔——用户对照模板确认哪张缺孔/是否故意 |
 

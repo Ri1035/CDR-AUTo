@@ -13,6 +13,24 @@
 | R5 | 2026-09-29 | 孔位规则精确化 + 坐标陷阱修复 | ✅ 通过 | **PositionX/Y 参考点不固定**——两次读数差 87mm，数值矛盾；视觉裁决法（导预览读图）裁决成功 | 全面改用 LeftX/BottomY/RightX/TopY；api_gotchas 第 11 节 | 见 git log |
 | R6 | 2026-09-29 | 模板替换演练：fill_template 引擎（hangtag_fill.py）+ 演示映射自测 | ✅ 通过 | ① 多行文字含 \r（HAPPY\rBABY）内容精确匹配失效 → 需序号映射或模糊匹配 ② 替换后长文字超卡缘 → 需越界检测/自动缩放（引擎完善项） | 8 处替换成功；双 .cdr+PDF(2.2MB)+PNG 全出 | 见 git log |
 | R7 | 2026-09-29 | 引擎完善：规范化模糊匹配 + 中心恢复 + 越界自动缩放 | ✅ 通过（10/10 命中，读图核对缩放生效） | 无新缺陷 | hangtag_fill.py 新增 norm_key/containers_of/container_for/fit_and_center | 见 git log |
+| R8 | 2026-09-29 | 读取修复：字体/字号/位图颜色模式 | ✅ 通过 | 根因：Story 无 FontProperties（字体走 Text 层或 Story.Font）；位图模式属性是 Bitmap.Mode 而非 ColorMode | 字号=Story.Size 10/10；字体=Text.FontProperties.Name（混排逐字符）；位图 Mode=5 即 CMYK 基线；ConvertTo 确认可用（N7） | 见 git log |
+| R9 | 2026-09-29 | NOTES 注释层识别与跳过 | ✅ 通过（11→10，注释正确跳过） | 无 | walk() 增 skip_layers（NOTES 前缀图层跳过）；list_text_shapes 默认 skip_notes=True | 见 git log |
+
+## R8/R9 详情（2026-09-29）
+
+### R8 读取修复（正确 API 定论）
+| 读取项 | 正确 API | 实测 |
+|---|---|---|
+| 字号 | `Text.Story.Size` | 10/10 全读出（19.9~5.4pt） |
+| 字体名 | `Text.FontProperties.Name`（Text 层）或 `Story.Font` | 部分可读（瘦金书）；混排文字 Story.Font 为空 → 逐字符 Range 兜底 |
+| 位图颜色模式 | `Bitmap.Mode` | 4 张全部 Mode=5 = CMYK 状态基线（用户已转 CMYK） |
+| 位图转换 | `Bitmap.ConvertTo(mode)` / ConvertToBW / ConvertToPaletted | 存在（N7 图片 CMYK 化可直用） |
+| 位图辅助 | ResolutionX/Y（480-759dpi）、IsEPS=False、Embedded | 全内嵌位图 |
+
+### R9 NOTES 注释层
+- 模板副本加 NOTES 图层 + 注释文字/标注线 → 引擎枚举验证：修复前 11 个（含注释）→ 修复后 10 个（注释跳过）
+- 规则：图层名以 NOTES 开头（大小写不敏感）即视为注释层，枚举/替换/导出全部跳过
+- 对应 v1.3 规范：生产模板的注释统一放 NOTES 图层
 
 ## R7 详情：引擎完善（2026-09-29）
 

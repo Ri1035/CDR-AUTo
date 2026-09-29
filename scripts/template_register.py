@@ -77,11 +77,22 @@ def analyze(doc):
             if st is not None and st.Text is not None:
                 o["text"] = st.Text
                 o["is_text"] = True
+                try: o["font"] = s.Text.FontProperties.Name   # 字体名走 Text 层（Story 无 FontProperties）
+                except Exception:
+                    try: o["font"] = st.Font
+                    except Exception: o["font"] = ""
+                try: o["size_pt"] = round(st.Size, 1)          # 字号必须走 Story.Size
+                except Exception: pass
         except Exception:
             pass
         try:
-            if s.Bitmap is not None:
+            b = s.Bitmap
+            if b is not None:
                 o["is_bitmap"] = True
+                try: o["bmp_mode"] = b.Mode                     # 颜色模式（实测 CMYK 基线=5）
+                except Exception: pass
+                try: o["res_dpi"] = [b.ResolutionX, b.ResolutionY]
+                except Exception: pass
         except Exception:
             pass
         try:
@@ -142,7 +153,8 @@ def collect_fields(objs):
                 "placeholder": o.get("text", ""),
                 "field": "TODO_%d" % len(fields),
                 "bbox": [o["lx"], o["by"], o["rx"], o["ty"]],
-                "font": "TODO(登记时核对)",
+                "font": o.get("font", ""),
+                "size_pt": o.get("size_pt"),
                 "max_chars": "TODO(建议值)",
                 "note": ""
             })

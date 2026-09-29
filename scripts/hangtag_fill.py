@@ -47,30 +47,39 @@ def cmyk(app, c):
     return app.CreateCMYKColor(int(c[0]), int(c[1]), int(c[2]), int(c[3]))
 
 
-def walk(shapes):
+def walk(shapes, skip_layers=None):
+    """遍历对象（递归群组+PowerClip）；skip_layers=需跳过的图层名集合（如 NOTES 注释层）。"""
     for s in shapes:
+        try:
+            if skip_layers:
+                ln = s.Layer.Name or ""
+                if ln.upper().startswith("NOTES"):
+                    continue
+        except Exception:
+            pass
         yield s
         try:
             if s.Shapes.Count:
-                for x in walk(s.Shapes):
+                for x in walk(s.Shapes, skip_layers):
                     yield x
         except Exception:
             pass
         try:
             pc = s.PowerClip
             if pc is not None:
-                for x in walk(pc.Shapes):
+                for x in walk(pc.Shapes, skip_layers):
                     yield x
         except Exception:
             pass
 
 
-def list_text_shapes(doc):
-    """枚举全部文字对象：[{idx(1起), text, left_x, right_x, top_y}]"""
+def list_text_shapes(doc, skip_notes=True):
+    """枚举全部文字对象：[{idx(1起), text, left_x, right_x, top_y}]；默认跳过 NOTES 图层。"""
     out = []
+    skip = {"NOTES"} if skip_notes else set()
     for pg_i in range(1, doc.Pages.Count + 1):
         doc.Pages(pg_i).Activate()
-        for s in walk(doc.ActivePage.Shapes):
+        for s in walk(doc.ActivePage.Shapes, skip):
             try:
                 st = s.Text.Story
                 if st is None or st.Text is None:

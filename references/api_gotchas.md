@@ -93,3 +93,13 @@ main = win32com.client.Dispatch(res)   # 包回 Shape 继续 fill/outline
 - CDR X4+ 文件格式为 **ZIP 容器**（文件头 `PK`），内部 `content/riffData.c` 的 RIFF `vrsn` 块记录格式版本（X4=0x0578=1400）。
 - PowerClip 内容对象遍历：`shape.PowerClip.Shapes`；其坐标仍是页面绝对坐标。
 - Shape.Type 数值实测（本机）：1=矩形, 2=椭圆, 3=曲线, 5=位图, 6=文字, 7=群组。
+
+## 12. 文字与位图属性读取（R8 实测补充）
+
+- **字体名**：`shape.Text.FontProperties.Name`（Text 层）或 `Text.Story.Font`——**`Story.FontProperties` 不存在**（Story 只管字号/对齐等段落属性）
+- **字号**：`Text.Story.Size`（读回也走这里，磅）
+- 多格式混排文字的 Story.Font 可能为空 → 需逐字符 `Text.Range(i, i+1).FontProperties.Name`
+- **位图颜色模式**：`shape.Bitmap.Mode`（无 ColorMode 属性）；实测用户已转 CMYK 的图 Mode=5（即 CMYK 基线值）
+- 位图转换（N7 图片 CMYK 化）：`Bitmap.ConvertTo(mode)` / `ConvertToBW` / `ConvertToPaletted` 存在
+- 位图其他有用属性：`ResolutionX/Y`（dpi）、`IsEPS`、`ExternallyLinked`、`Embedded`
+- 图层跳过：`doc.Layers` / `page.Layers` 按图层名过滤（NOTES 注释层），遍历时跳过该层 Shapes
